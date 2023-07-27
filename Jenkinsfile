@@ -1,5 +1,9 @@
 pipeline {
     agent any
+
+     environment {
+        NODEJS_VERSION = '18' // Update this to the latest LTS version of Node.js
+    }
     
     stages {
         stage('Checkout') {
@@ -12,11 +16,11 @@ pipeline {
         stage('Build') {
             steps {
                 // Install Node.js and dependencies
-                sh 'curl -sL https://deb.nodesource.com/setup_14.x | bash -'
+                sh 'curl -sL https://deb.nodesource.com/setup_18.x | bash -'
                 sh 'apt-get install -y nodejs'
                 sh 'npm install'
                 
-                // Build the React app
+                // Build the React app  
                 sh 'npm run build'
             }
         }
