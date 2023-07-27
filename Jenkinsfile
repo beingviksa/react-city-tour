@@ -7,12 +7,12 @@ pipeline {
                 // Checkout the code from Git   
                 git 'https://github.com/beingviksa/react-city-tour.git'
             }
-        }
+        }   
         
         stage('Build') {
             steps {
                 // Install Node.js and dependencies
-                sh 'curl -sL https://deb.nodesource.com/setup_14.x | bash -'
+                sh 'curl -sL https://deb.nodesource.com/setup_20.x | bash -'
                 sh 'apt-get install -y nodejs'
                 sh 'npm install'
                 
