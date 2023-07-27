@@ -11,9 +11,6 @@ pipeline {
         
         stage('Build') {
             steps {
-                // Install Node.js and dependencies
-                sh 'curl -sL https://deb.nodesource.com/setup_20.x | bash -'
-                sh 'apt-get install -y nodejs'
                 sh 'npm install'
                 
                 // Build the React app
